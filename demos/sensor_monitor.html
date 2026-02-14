@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HWB Demo: Sensor Monitor</title>
+    <style>
+        body { font-family: system-ui, sans-serif; padding: 2rem; max-width: 600px; margin: auto; }
+        .dashboard { background: #f0f4f8; padding: 2rem; border-radius: 12px; text-align: center; }
+        .value { font-size: 4rem; font-weight: bold; color: #0056b3; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Environment Monitor</h1>
+    <p>Binding real-time Bluetooth sensor data directly to HTML DOM elements declaratively.</p>
+
+    <div class="dashboard">
+        <button hw-request="bluetooth:esp32">Connect ESP32 Sensor</button>
+        
+        <p>Current Temperature</p>
+        
+        <div>
+            <span class="value" hw-device="esp32" hw-bind="read:temperature">--</span>
+            <span style="font-size: 2rem;">°C</span>
+        </div>
+    </div>
+
+    <script type="module" src="../polyfill/script.js"></script>
+
+</body>
+</html>

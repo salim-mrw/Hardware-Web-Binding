@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HWB Demo: Basic LED Control</title>
+    <style>
+        body { font-family: system-ui, sans-serif; padding: 2rem; max-width: 600px; margin: auto; }
+        .card { border: 1px solid #ccc; padding: 1.5rem; border-radius: 8px; text-align: center; }
+        button { padding: 10px 20px; font-size: 16px; margin: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Basic LED Control</h1>
+    <p>This demo uses the <b>Hardware Web Binding</b> declarative API to control an LED via Web Serial, with zero JavaScript written by the developer.</p>
+
+    <div class="card">
+        <button hw-request="serial:arduino">1. Connect to Arduino</button>
+        
+        <hr style="margin: 20px 0;">
+
+        <button hw-device="arduino" hw-action="click -> write:1">Turn LED ON</button>
+        <button hw-device="arduino" hw-action="click -> write:0">Turn LED OFF</button>
+    </div>
+
+    <script type="module" src="../polyfill/script.js"></script>
+
+</body>
+</html>
